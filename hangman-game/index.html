@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hangman Game</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="game-info">
+        <h2 class="game-name">Hang Man</h2>
+        <p class="category">Words From : <span></span></p>
+      </div>
+      <hr />
+      <div class="row">
+        <div class="hang-draw">
+          <div class="hang-draw__draw">
+            <div class="hang-draw__stand"></div>
+            <div class="hang-draw__hang"></div>
+            <div class="hang-draw__rope"></div>
+            <div class="hang-draw__man">
+              <div class="man__head"></div>
+              <div class="man__body"></div>
+              <div class="man__hands"></div>
+              <div class="man__legs"></div>
+            </div>
+          </div>
+        </div>
+        <div class="letters"></div>
+      </div>
+      <hr />
+      <div class="letter-guess"></div>
+    </div>
+    <audio
+      id="wrong"
+      src="assets/audio/wrong.mp3"
+      type="audio/mpeg"
+      preload="auto"
+    ></audio>
+    <audio
+      id="right"
+      src="assets/audio/right.mp3"
+      type="audio/mpeg"
+      preload="auto"
+    ></audio>
+    <audio
+      id="success"
+      src="assets/audio/final-success.mp3"
+      type="audio/mpeg"
+      preload="auto"
+    ></audio>
+    <audio
+      id="fail"
+      src="assets/audio/final-fail.mp3"
+      type="audio/mpeg"
+      preload="auto"
+    ></audio>
+    <script src="script/main.js"></script>
+  </body>
+</html>
