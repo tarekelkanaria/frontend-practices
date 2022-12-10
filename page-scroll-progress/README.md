@@ -1,5 +1,11 @@
 # Page Scroll Progress
 
+## Demo-preview
+
+- [link to Page Scroll Progress](https://tarekelkanaria.github.io/frontend-practices/page-scroll-progress/index.html)
+
+## Description
+
 <font color="#283593">
 
 A page scroll progress is a scroll bar on the top of the page moves depending on **user behavior** _as the user scroll the page vertically the scroll bar move with th same percentage but **horizantely**_

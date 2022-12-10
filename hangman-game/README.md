@@ -1,5 +1,11 @@
 # Hangman game
 
+## Demo-preview
+
+- [link to Hangman Game](https://tarekelkanaria.github.io/frontend-practices/hangman-game/index.html)
+
+## Description
+
 <font color="#283593">
 
 - The game consists of two sections, on the right side all the English letters, and on the left side an empty board. At the bottom, there are squares with _the same number of letters in the required word_.
