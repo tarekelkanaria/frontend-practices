@@ -1,5 +1,4 @@
 let progressBar = document.querySelector(".progress-bar");
-// progressBar.style.display = "none";
 // get all the height after subtract the client height
 let remainingHeight =
   document.documentElement.scrollHeight - document.documentElement.clientHeight;
