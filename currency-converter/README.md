@@ -2,6 +2,8 @@
 
 ## Demo-preview
 
+- [Link to Currency Converter App](https://tarekelkanaria.github.io/frontend-practices/currency-converter/index.html)
+
 ## Author
 
 Tarek Elkanaria
