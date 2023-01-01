@@ -4,6 +4,8 @@
 
 - [Link to Currency Converter App](https://tarekelkanaria.github.io/frontend-practices/currency-converter/index.html)
 
+Note: The App uses CurrencyFreaks API so if you want to use it maybe you need to fork the repository and create API Key from CurrencyFreaks then you can put your API key in the main.js file to fetch the data.
+
 ## Author
 
 Tarek Elkanaria
