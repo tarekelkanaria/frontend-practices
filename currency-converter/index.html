@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Currency Convereter</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles/style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Currency Convereter App</h1>
+    </header>
+    <main class="container">
+      <section class="content">
+        <div class="unit">
+          <h3>Choose Currency</h3>
+          <div class="select">
+            <p>From :</p>
+            <button class="base-currency">
+              <i class="fa fa-chevron-down"></i>
+            </button>
+            <ul class="base-list show"></ul>
+          </div>
+          <div class="amount">
+            <label for="amount-from">Amount : </label>
+            <input
+              type="number"
+              min="1"
+              id="amount-from"
+              placeholder="Enter Value here"
+            />
+          </div>
+        </div>
+        <button class="convert">Convert</button>
+        <div class="unit">
+          <h3>Choose Currency to convert to</h3>
+          <div class="select">
+            <p>To :</p>
+            <button class="converted-currency">
+              <i class="fa fa-chevron-down"></i>
+            </button>
+            <ul class="converted-list show"></ul>
+          </div>
+          <div class="amount">
+            <p>Amount :</p>
+            <p class="amount-to"></p>
+          </div>
+        </div>
+      </section>
+    </main>
+    <script type="module" src="script/hidden.js"></script>
+    <script type="module" src="script/main.js"></script>
+  </body>
+</html>
