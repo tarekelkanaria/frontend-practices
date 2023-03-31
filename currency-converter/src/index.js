@@ -68,7 +68,7 @@ document.body.addEventListener("click", (e) => {
     convertedCurrencyList.classList.toggle("show");
   }
 });
-fetch(`https://api.currencyfreaks.com/latest?apikey=${API_KEY}`)
+fetch(`https://api.currencyfreaks.com/latest?apikey=${process.env.API_KEY}`)
   .then((res) => res.json())
   .then((data) => {
     excuteBtn.addEventListener("click", () => {
