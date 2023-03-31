@@ -31,7 +31,6 @@ body {
 }
 .container {
   width: 90%;
-  height: 80vh;
   margin-left: auto;
   margin-right: auto;
   padding: 1rem;
@@ -47,7 +46,7 @@ header h1 {
   font-weight: bold;
   text-transform: uppercase;
 }
-@media (max-width: 765px) {
+@media (max-width: 991px) {
   header h1 {
     font-size: 1.8rem;
   }
@@ -63,7 +62,7 @@ header h1 {
   width: 49%;
   margin-bottom: 2rem;
 }
-@media (max-width: 765px) {
+@media (max-width: 991px) {
   .content {
     flex-direction: column;
   }
@@ -141,7 +140,7 @@ h3 {
   border-top: 1px solid #d4d4d2;
   cursor: pointer;
 }
-@media (max-width: 765px) {
+@media (max-width: 991px) {
   .base-list,
   .converted-list {
     height: 20rem;
