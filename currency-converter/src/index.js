@@ -1,4 +1,5 @@
-import { apiKey } from "./hidden.js";
+import style from "./style.css";
+
 let baseCurrencyList = document.querySelector(".base-list");
 let convertedCurrencyList = document.querySelector(".converted-list");
 let baseBtn = document.querySelector(".base-currency");
@@ -67,7 +68,7 @@ document.body.addEventListener("click", (e) => {
     convertedCurrencyList.classList.toggle("show");
   }
 });
-fetch(`https://api.currencyfreaks.com/latest?apikey=${apiKey}`)
+fetch(`https://api.currencyfreaks.com/latest?apikey=${process.env.API_KEY}`)
   .then((res) => res.json())
   .then((data) => {
     excuteBtn.addEventListener("click", () => {
