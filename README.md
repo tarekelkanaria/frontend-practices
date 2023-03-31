@@ -10,10 +10,6 @@ Practices for Front-End web development
 
 - Tarek Elkanaria
 
-## References
-
-- [Elzero JavaScript Practice](https://elzero.org/javascript-practice/)
-
 ## Used Languages
 
 - HTML, CSS, JavaScript
