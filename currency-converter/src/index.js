@@ -1,5 +1,6 @@
 import style from "./style.css";
 
+let pageContainer = document.querySelector(".content");
 let baseCurrencyList = document.querySelector(".base-list");
 let convertedCurrencyList = document.querySelector(".converted-list");
 let baseBtn = document.querySelector(".base-currency");
@@ -51,7 +52,19 @@ fetch("https://api.currencyfreaks.com/supported-currencies")
       }
     });
   })
-  .catch((err) => console.log(err));
+  .catch((err) => {
+    let errorElem = document.createElement("div");
+    errorElem.className = "error";
+    let errorText = document.createElement("p");
+    errorText.innerText = `Ops Something went wrong ${err.message}`;
+    let closeError = document.createElement("button");
+    closeError.innerText = "x";
+    errorElem.append(closeError, errorText);
+    pageContainer.append(errorElem);
+    closeError.addEventListener("click", () => {
+      closeError.parentElement.remove();
+    });
+  });
 baseBtn.addEventListener("click", () => {
   baseCurrencyList.classList.toggle("show");
 });

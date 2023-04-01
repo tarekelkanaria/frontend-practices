@@ -132,7 +132,8 @@ h3 {
   border-radius: 0.6rem;
   background-color: rgba(3, 38, 90, 0.75);
   width: 60%;
-  height: 3rem;
+  height: 4rem;
+  font-size: 2rem;
 }
 @media (max-width: 991px) {
   #amount-from,
@@ -194,4 +195,46 @@ h3 {
 .icon {
   max-width: 5%;
   width: 5%;
+}
+.error {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+  height: 80%;
+  margin: auto;
+  padding: 1rem;
+  background: linear-gradient(
+      180deg,
+      rgb(16 41 79 / 95%) 20%,
+      rgba(7, 39, 87, 0.84) 40.48%,
+      rgba(3, 38, 90, 0.75) 65.02%,
+      rgba(8, 58, 131, 0.6) 87.29%,
+      rgba(0, 69, 172, 0.4) 100%
+    ),
+    url(../assets/dollars.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  color: #f4f4f2;
+  position: absolute;
+  top: 10%;
+}
+.error button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  outline: none;
+  background-color: red;
+  color: #f4f4f2;
+  font-size: 2.8rem;
+  padding: 1rem;
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+  cursor: pointer;
 }
