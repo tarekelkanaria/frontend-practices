@@ -10,48 +10,55 @@ let inputAmount = document.getElementById("amount-from");
 let outputAmount = document.querySelector(".amount-to");
 fetch("https://api.currencyfreaks.com/supported-currencies")
   .then((res) => res.json())
-  .then((data) => {
-    data.forEach((curr) => {
-      if (
-        curr.currencyCode &&
-        curr.icon &&
-        curr.status === "AVAILABLE" &&
-        curr.countryName &&
-        curr.countryName !== "Global"
-      ) {
-        if (curr.currencyCode === "USD") {
-          baseBtn.innerHTML = `<img src="${curr.icon}" class="icon" /> <span class="base-code">${curr.currencyCode}</span> ${curr.countryName} <i class="fa fa-chevron-down"></i>`;
-        }
-        let baseCurrencyItem = document.createElement("li");
-        let baseCurrencyIcon = document.createElement("img");
-        let baseCurrCode = document.createElement("span");
-        baseCurrencyItem.className = "base-item";
-        baseCurrencyIcon.className = "icon";
-        baseCurrencyIcon.src = curr.icon;
-        baseCurrCode.className = "base-code";
-        baseCurrCode.innerText = curr.currencyCode;
-        baseCurrencyItem.innerText = curr.countryName;
-        baseCurrencyItem.prepend(baseCurrCode);
-        baseCurrencyItem.prepend(baseCurrencyIcon);
-        baseCurrencyList.append(baseCurrencyItem);
-        if (curr.currencyCode === "EGP") {
-          convertedBtn.innerHTML = `<img src="${curr.icon}" class="icon" /> <span class="convert-code">${curr.currencyCode}</span> ${curr.countryName} <i class="fa fa-chevron-down"></i>`;
-        }
-        let converCurrencyItem = document.createElement("li");
-        let converCurrencyIcon = document.createElement("img");
-        let converCurrCode = document.createElement("span");
-        converCurrencyItem.className = "convert-item";
-        converCurrencyIcon.className = "icon";
-        converCurrencyIcon.src = curr.icon;
-        converCurrCode.className = "convert-code";
-        converCurrCode.innerText = curr.currencyCode;
-        converCurrencyItem.innerText = curr.countryName;
-        converCurrencyItem.prepend(converCurrCode);
-        converCurrencyItem.prepend(converCurrencyIcon);
-        convertedCurrencyList.append(converCurrencyItem);
-      }
-    });
+  .then((data) =>
+    data.filter(
+      (item) =>
+        !!item.currencyCode &&
+        !!item.icon &&
+        !!item.countryName &&
+        item.status === "AVAILABLE" &&
+        item.countryName !== "Global"
+    )
+  )
+  .then((filteredData) => {
+    return filteredData.sort((a, b) =>
+      a.countryName.toLowerCase().localeCompare(b.countryName.toLowerCase())
+    );
   })
+  .then((sortedData) =>
+    sortedData.forEach((curr) => {
+      if (curr.currencyCode === "USD") {
+        baseBtn.innerHTML = `<img src="${curr.icon}" class="icon" /> <span class="base-code">${curr.currencyCode}</span> ${curr.countryName} <i class="fa fa-chevron-down"></i>`;
+      }
+      let baseCurrencyItem = document.createElement("li");
+      let baseCurrencyIcon = document.createElement("img");
+      let baseCurrCode = document.createElement("span");
+      baseCurrencyItem.className = "base-item";
+      baseCurrencyIcon.className = "icon";
+      baseCurrencyIcon.src = curr.icon;
+      baseCurrCode.className = "base-code";
+      baseCurrCode.innerText = curr.currencyCode;
+      baseCurrencyItem.innerText = curr.countryName;
+      baseCurrencyItem.prepend(baseCurrCode);
+      baseCurrencyItem.prepend(baseCurrencyIcon);
+      baseCurrencyList.append(baseCurrencyItem);
+      if (curr.currencyCode === "EGP") {
+        convertedBtn.innerHTML = `<img src="${curr.icon}" class="icon" /> <span class="convert-code">${curr.currencyCode}</span> ${curr.countryName} <i class="fa fa-chevron-down"></i>`;
+      }
+      let converCurrencyItem = document.createElement("li");
+      let converCurrencyIcon = document.createElement("img");
+      let converCurrCode = document.createElement("span");
+      converCurrencyItem.className = "convert-item";
+      converCurrencyIcon.className = "icon";
+      converCurrencyIcon.src = curr.icon;
+      converCurrCode.className = "convert-code";
+      converCurrCode.innerText = curr.currencyCode;
+      converCurrencyItem.innerText = curr.countryName;
+      converCurrencyItem.prepend(converCurrCode);
+      converCurrencyItem.prepend(converCurrencyIcon);
+      convertedCurrencyList.append(converCurrencyItem);
+    })
+  )
   .catch((err) => {
     let errorElem = document.createElement("div");
     errorElem.className = "error";
